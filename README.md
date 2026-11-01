@@ -1,6 +1,6 @@
-# Reymark Villate Orendain | Portfolio
+# -Portfolio-
 
-A personal portfolio and résumé site built with HTML, CSS, and JavaScript.
+Personal portfolio and résumé site for Reymark Villate Orendain, built with HTML, CSS, and JavaScript.
 
 ## Run locally
 
