@@ -31,12 +31,11 @@ function showSection(targetSection, activeButton) {
     view.hidden = view.id !== "resume-view";
   });
   resumeSections.forEach((section) => {
-    section.hidden = section !== targetSection;
+    section.hidden = false;
   });
   setActiveButton(activeButton);
   closeNavigation();
-  window.scrollTo({ top: 0, behavior: "instant" });
-  replayEntrance(targetSection);
+  targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 viewButtons.forEach((button) => {
@@ -85,6 +84,5 @@ menuToggle.addEventListener("click", () => {
 
 document.querySelector("#year").textContent = new Date().getFullYear();
 
-const homeSection = document.getElementById("home");
 const homeButton = document.querySelector('.section-button[data-section="home"]');
-showSection(homeSection, homeButton);
+setActiveButton(homeButton);
