@@ -26,16 +26,17 @@ function replayEntrance(element) {
   element.classList.add("is-entering");
 }
 
-function showSection(targetSection, activeButton) {
+function showFullResume() {
   pageViews.forEach((view) => {
     view.hidden = view.id !== "resume-view";
   });
   resumeSections.forEach((section) => {
     section.hidden = false;
   });
-  setActiveButton(activeButton);
+  setActiveButton(null);
   closeNavigation();
-  targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.scrollTo({ top: 0, behavior: "instant" });
+  replayEntrance(document.getElementById("home"));
 }
 
 viewButtons.forEach((button) => {
@@ -56,22 +57,23 @@ viewButtons.forEach((button) => {
 sectionButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const targetSection = document.getElementById(button.dataset.section);
-    showSection(targetSection, button);
+    pageViews.forEach((view) => {
+      view.hidden = view.id !== "resume-view";
+    });
+    resumeSections.forEach((section) => {
+      section.hidden = false;
+    });
+    replayEntrance(targetSection);
+    setActiveButton(button);
+    closeNavigation();
+    targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
 
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
+document.querySelectorAll('a[href="#home"]').forEach((link) => {
   link.addEventListener("click", (event) => {
-    const sectionId = link.getAttribute("href").slice(1);
-    const targetSection = document.getElementById(sectionId);
-    const activeButton = document.querySelector(`.section-button[data-section="${sectionId}"]`);
-
-    if (!targetSection || !activeButton) {
-      return;
-    }
-
     event.preventDefault();
-    showSection(targetSection, activeButton);
+    showFullResume();
   });
 });
 
@@ -83,6 +85,3 @@ menuToggle.addEventListener("click", () => {
 });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
-
-const homeButton = document.querySelector('.section-button[data-section="home"]');
-setActiveButton(homeButton);
