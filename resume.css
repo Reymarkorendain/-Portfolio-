@@ -431,7 +431,7 @@ body {
 .skill-list li { border-color: #3a5146; border-radius: 3px; background: #141d19; color: #c3d1c8; }
 .certification-list small, .declaration > p:not(.eyebrow) { color: #a9b8b0; }
 .reference-card { border-color: #31423a; border-radius: 3px; background: #19241f; }
-.project-section { padding-top: 40px; padding-bottom: 60px; }
+.project-section { display: grid; gap: 24px; padding-top: 40px; padding-bottom: 60px; }
 .project-panel { overflow: hidden; border: 1px solid #31423a; border-radius: 4px; background: #151f1b; box-shadow: 14px 14px 0 #6dd9ce12; }
 .project-panel-bar { display: grid; min-height: 42px; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; padding: 0 16px; border-bottom: 1px solid var(--line); background: #19241f; color: #a6b6ae; font: 9px var(--mono); }
 .project-window-dots { display: flex; gap: 6px; }
