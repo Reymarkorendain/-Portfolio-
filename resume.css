@@ -63,7 +63,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .resume-section { padding-top: 82px; padding-bottom: 88px; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 32px; }
-.profile-section-heading { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 14px; }
 .section-heading h2 { margin: 9px 0 0; font: 600 clamp(35px, 4vw, 45px)/1.12 var(--display); letter-spacing: -2.5px; }
 .section-note { margin: 0 0 3px; color: var(--muted); font-size: 11px; line-height: 1.8; }
 .profile-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
@@ -71,13 +70,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .profile-item dt { margin-bottom: 10px; color: #85877e; font: 9px var(--mono); letter-spacing: .7px; text-transform: uppercase; }
 .profile-item dd { margin: 0; font: 600 14px/1.5 var(--display); }
 .profile-address { grid-column: span 2; }
-.profile-intro-details { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.profile-intro-details .section-note { flex: 1; }
-.profile-intro-details .hero-visual { flex: none; width: 190px; margin: 0; }
-.profile-intro-details .portrait-frame { width: 82%; }
-.profile-intro-details .portrait-caption { font-size: 6px; }
-.profile-intro-details .float-note { right: -7%; width: 66px; height: 66px; font-size: 6px; }
-.profile-intro-details .float-note span { top: 5px; right: 8px; font-size: 12px; }
+.profile-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, .55fr); align-items: center; gap: 48px; }
+.profile-content .hero-visual { justify-self: center; width: min(100%, 340px); margin: 0; }
+.profile-content .portrait-frame { width: 83%; }
 .education-section, .references-section { width: 100%; background: #eeeee7; }
 .education-section > .section-wrap, .references-section > .section-wrap { padding-top: 82px; padding-bottom: 88px; }
 .education-list { border-top: 1px solid #d7d8ce; }
@@ -137,8 +132,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .resume-objective { font-size: 12px; }
   .hero-visual { width: 110%; margin-right: 0; }
   .portrait-frame { width: 90%; }
-  .profile-intro-details { gap: 16px; }
-  .profile-intro-details .hero-visual { width: 160px; }
+  .profile-content { grid-template-columns: minmax(0, 1fr) minmax(210px, .6fr); gap: 24px; }
   .float-note { right: -1%; width: 72px; height: 72px; font-size: 6px; }
   .float-note span { top: 6px; right: 10px; font-size: 13px; }
   .resume-section, .education-section > .section-wrap, .references-section > .section-wrap { padding-top: 65px; padding-bottom: 70px; }
@@ -157,10 +151,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .resume-objective { max-width: 380px; font-size: 12px; }
   .resume-hero .hero-actions { flex-wrap: wrap; gap: 15px; margin-top: 22px; }
   .hero-visual { align-self: center; width: 72%; margin: 38px 8% 0 0; }
-  .profile-intro-details { justify-content: space-between; gap: 12px; }
-  .profile-intro-details .section-note { max-width: 190px; }
-  .profile-intro-details .section-note { min-width: 0; }
-  .profile-intro-details .hero-visual { width: clamp(88px, 30vw, 120px); }
+  .profile-content { grid-template-columns: 1fr; gap: 24px; }
+  .profile-content .hero-visual { width: min(76%, 290px); margin: 0 auto; }
   .portrait-frame { width: 82%; padding: 8px 8px 42px; }
   .portrait-caption { font-size: 7px; }
   .scroll-cue { bottom: 28px; }
