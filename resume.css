@@ -85,6 +85,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .skill-list, .certification-list { margin: 0; padding: 0; list-style: none; }
 .skill-list { display: flex; flex-wrap: wrap; gap: 9px; }
 .skill-list li { padding: 10px 12px; border: 1px solid #d7d8ce; border-radius: 30px; color: #5f6257; font: 9px var(--mono); }
+.skill-icon-library { position: absolute; width: 0; height: 0; overflow: hidden; }
+.skill-list-technical li { display: inline-flex; align-items: center; gap: 7px; }
+.skill-icon { width: 14px; height: 14px; flex: none; fill: none; stroke: var(--accent); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.personal-skills-heading { margin-top: 28px !important; }
 .certification-list li { display: grid; grid-template-columns: 83px 1fr; gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); }
 .certification-date { padding-top: 3px; color: #888a80; font: 8px var(--mono); letter-spacing: .3px; }
 .certification-list strong { display: block; font-size: 12px; font-weight: 600; line-height: 1.6; }
