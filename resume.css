@@ -452,8 +452,26 @@ body {
 .site-footer > span, .site-footer > a:not(.wordmark) { color: #91a39a; }
 
 .is-entering { animation: section-enter 420ms cubic-bezier(.2, .75, .25, 1) both; }
+.is-entering .resume-hero-copy > .eyebrow,
+.is-entering .section-heading .eyebrow,
+.is-entering .project-panel-content > .eyebrow,
+.is-entering .contact > .eyebrow { animation: text-reveal 600ms cubic-bezier(.2, .75, .25, 1) 60ms both; }
+.is-entering .resume-hero-copy > h1,
+.is-entering .section-heading h2,
+.is-entering .project-panel-content h2,
+.is-entering .contact h2 { animation: text-reveal 650ms cubic-bezier(.2, .75, .25, 1) 140ms both; }
+.is-entering .resume-objective,
+.is-entering .project-panel-content > p:not(.eyebrow),
+.is-entering .contact-note { animation: text-reveal 600ms cubic-bezier(.2, .75, .25, 1) 240ms both; }
+.is-entering .resume-hero-copy > .hero-actions,
+.is-entering .project-panel-content .button,
+.is-entering .contact-actions { animation: text-reveal 600ms cubic-bezier(.2, .75, .25, 1) 340ms both; }
 @keyframes section-enter {
   from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes text-reveal {
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -500,5 +518,19 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .is-entering { animation: none; }
+  .is-entering,
+  .is-entering .resume-hero-copy > .eyebrow,
+  .is-entering .section-heading .eyebrow,
+  .is-entering .project-panel-content > .eyebrow,
+  .is-entering .contact > .eyebrow,
+  .is-entering .resume-hero-copy > h1,
+  .is-entering .section-heading h2,
+  .is-entering .project-panel-content h2,
+  .is-entering .contact h2,
+  .is-entering .resume-objective,
+  .is-entering .project-panel-content > p:not(.eyebrow),
+  .is-entering .contact-note,
+  .is-entering .resume-hero-copy > .hero-actions,
+  .is-entering .project-panel-content .button,
+  .is-entering .contact-actions { animation: none; }
 }
