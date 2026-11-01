@@ -70,6 +70,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .profile-item dt { margin-bottom: 10px; color: #85877e; font: 9px var(--mono); letter-spacing: .7px; text-transform: uppercase; }
 .profile-item dd { margin: 0; font: 600 14px/1.5 var(--display); }
 .profile-address { grid-column: span 2; }
+.profile-skills { margin-top: 32px; }
+.profile-skills h3 { margin: 0 0 16px; font: 600 17px var(--display); }
 
 .education-section, .references-section { width: 100%; background: #eeeee7; }
 .education-section > .section-wrap, .references-section > .section-wrap { padding-top: 82px; padding-bottom: 88px; }
