@@ -441,6 +441,8 @@ body {
 .project-live { display: flex; align-items: center; justify-self: end; gap: 6px; color: var(--lime); }
 .project-live span { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); }
 .project-panel-content { padding: clamp(24px, 5vw, 58px); }
+.project-icon { display: grid; width: 58px; height: 58px; place-items: center; margin-bottom: 22px; border: 1px solid #3a5146; border-radius: 4px; background: #19241f; color: var(--lime); }
+.project-icon svg { width: 30px; height: 30px; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
 .project-panel-content h2 { margin: 14px 0; font: 700 42px/1.12 var(--display); }
 .project-panel-content h2 span { color: var(--lime); }
 .project-panel-content > p:not(.eyebrow) { margin: 0 0 24px; color: #a9b8b0; font-size: 13px; line-height: 1.7; }
