@@ -26,17 +26,17 @@ function replayEntrance(element) {
   element.classList.add("is-entering");
 }
 
-function showFullResume() {
+function showSection(targetSection, activeButton) {
   pageViews.forEach((view) => {
     view.hidden = view.id !== "resume-view";
   });
   resumeSections.forEach((section) => {
-    section.hidden = false;
+    section.hidden = section !== targetSection;
   });
-  setActiveButton(null);
+  setActiveButton(activeButton);
   closeNavigation();
   window.scrollTo({ top: 0, behavior: "instant" });
-  replayEntrance(document.getElementById("home"));
+  replayEntrance(targetSection);
 }
 
 viewButtons.forEach((button) => {
@@ -57,23 +57,22 @@ viewButtons.forEach((button) => {
 sectionButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const targetSection = document.getElementById(button.dataset.section);
-    pageViews.forEach((view) => {
-      view.hidden = view.id !== "resume-view";
-    });
-    resumeSections.forEach((section) => {
-      section.hidden = false;
-    });
-    replayEntrance(targetSection);
-    setActiveButton(button);
-    closeNavigation();
-    targetSection.scrollIntoView({ behavior: "instant", block: "start" });
+    showSection(targetSection, button);
   });
 });
 
-document.querySelectorAll('a[href="#home"]').forEach((link) => {
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
+    const sectionId = link.getAttribute("href").slice(1);
+    const targetSection = document.getElementById(sectionId);
+    const activeButton = document.querySelector(`.section-button[data-section="${sectionId}"]`);
+
+    if (!targetSection || !activeButton) {
+      return;
+    }
+
     event.preventDefault();
-    showFullResume();
+    showSection(targetSection, activeButton);
   });
 });
 
@@ -85,3 +84,7 @@ menuToggle.addEventListener("click", () => {
 });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
+
+const homeSection = document.getElementById("home");
+const homeButton = document.querySelector('.section-button[data-section="home"]');
+showSection(homeSection, homeButton);
