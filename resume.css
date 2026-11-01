@@ -70,9 +70,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .profile-item dt { margin-bottom: 10px; color: #85877e; font: 9px var(--mono); letter-spacing: .7px; text-transform: uppercase; }
 .profile-item dd { margin: 0; font: 600 14px/1.5 var(--display); }
 .profile-address { grid-column: span 2; }
-.profile-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, .55fr); align-items: center; gap: 48px; }
-.profile-content .hero-visual { justify-self: center; width: min(100%, 340px); margin: 0; }
-.profile-content .portrait-frame { width: 83%; }
 .education-section, .references-section { width: 100%; background: #eeeee7; }
 .education-section > .section-wrap, .references-section > .section-wrap { padding-top: 82px; padding-bottom: 88px; }
 .education-list { border-top: 1px solid #d7d8ce; }
@@ -132,7 +129,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .resume-objective { font-size: 12px; }
   .hero-visual { width: 110%; margin-right: 0; }
   .portrait-frame { width: 90%; }
-  .profile-content { grid-template-columns: minmax(0, 1fr) minmax(210px, .6fr); gap: 24px; }
   .float-note { right: -1%; width: 72px; height: 72px; font-size: 6px; }
   .float-note span { top: 6px; right: 10px; font-size: 13px; }
   .resume-section, .education-section > .section-wrap, .references-section > .section-wrap { padding-top: 65px; padding-bottom: 70px; }
@@ -151,8 +147,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .resume-objective { max-width: 380px; font-size: 12px; }
   .resume-hero .hero-actions { flex-wrap: wrap; gap: 15px; margin-top: 22px; }
   .hero-visual { align-self: center; width: 72%; margin: 38px 8% 0 0; }
-  .profile-content { grid-template-columns: 1fr; gap: 24px; }
-  .profile-content .hero-visual { width: min(76%, 290px); margin: 0 auto; }
   .portrait-frame { width: 82%; padding: 8px 8px 42px; }
   .portrait-caption { font-size: 7px; }
   .scroll-cue { bottom: 28px; }
