@@ -61,12 +61,12 @@ sectionButtons.forEach((button) => {
       view.hidden = view.id !== "resume-view";
     });
     resumeSections.forEach((section) => {
-      section.hidden = section !== targetSection;
+      section.hidden = false;
     });
     replayEntrance(targetSection);
     setActiveButton(button);
     closeNavigation();
-    window.scrollTo({ top: 0, behavior: "instant" });
+    targetSection.scrollIntoView({ behavior: "instant", block: "start" });
   });
 });
 
